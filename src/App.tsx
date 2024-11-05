@@ -14,12 +14,12 @@ export default function App() {
   useEffect(() => {
     getAuth()
   }, [])
+  console.log(auth)
 
-  if (auth.length <= 0) {
+  if (!auth) {
     return <div>loading.....</div>
   }
 
-  console.log(auth)
   return (
     <Routes >
       <Route path="/" element={CardWithResponsiveBorderRadius()} ></Route>
