@@ -15,7 +15,7 @@ export default function App() {
     getAuth()
   }, [])
 
-  if (!auth) {
+  if (auth.length <= 0) {
     return <div>loading.....</div>
   }
 
