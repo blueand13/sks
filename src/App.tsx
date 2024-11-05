@@ -5,13 +5,10 @@ import { supabase } from './lib/helper/supabaseclient';
 
 
 export default function App() {
-  const [auth, setAuth]: any = useState(null)
+  const [auth, setAuth]: any = useState([])
 
   async function getAuth() {
-    const { data, error } = await supabase.from("auth").select()
-    if (!error) {
-      throw error
-    }
+    const { data } = await supabase.from("auth").select()
     setAuth(data)
   }
   useEffect(() => {
@@ -21,6 +18,7 @@ export default function App() {
   if (!auth) {
     return <div>loading.....</div>
   }
+
   console.log(auth)
   return (
     <Routes >
