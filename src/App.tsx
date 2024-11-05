@@ -20,7 +20,6 @@ export default function App() {
   }
 
   console.log(auth)
-  console.log(process.env.SUPABASE_URL)
   return (
     <Routes >
       <Route path="/" element={CardWithResponsiveBorderRadius()} ></Route>
